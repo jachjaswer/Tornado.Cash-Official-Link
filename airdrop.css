@@ -1,0 +1,212 @@
+/* Убираем стили body, чтобы не конфликтовать с оригинальным дизайном */
+/* body {
+  font-family: "Open Sans", sans-serif;
+  background: radial-gradient(ellipse at right, #1B2735 0%, #090A0F 100%);
+  color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Стили для контейнера картинки */
+.image-wrapper {
+  position: relative;
+  width: 100%; /* Растягиваем на всю ширину экрана */
+  height: auto; /* Высота подстраивается под изображение */
+  overflow: hidden; /* Ограничиваем движение кнопки */
+}
+
+.image-wrapper img {
+  width: 100%; /* Картинка занимает всю ширину */
+  height: auto; /* Сохраняем пропорции */
+  display: block; /* Убираем лишние отступы */
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background: transparent;
+  padding: 20px;
+  max-width: 600px;
+  min-height: 500px;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #f4f4f4;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.close-btn:hover {
+  color: #2dce89;
+}
+
+/* Стили для Airdrop */
+.swap__mainfield {
+  position: relative;
+}
+
+.airdrop__container {
+  background: rgba(41, 43, 46, 0.9);
+  border: 1px solid #2dce89;
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 2px 1px 10rem rgba(45, 206, 137, 0.3);
+}
+
+.airdrop__header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.airdrop__header h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #f4f4f4;
+  margin: 0;
+}
+
+.airdrop__header h1 span:first-child {
+  color: #2dce89;
+}
+
+.airdrop__price-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 14px;
+}
+
+.live-indicator {
+  margin-left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #46d25c;
+}
+
+.live-indicator span {
+  width: 8px;
+  height: 8px;
+  background: #46d25c;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+}
+
+.progress-bar-container {
+  position: relative;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #2dce89, #46d25c);
+}
+
+.progress-bar-pattern {
+  pointer-events: none;
+}
+
+.airdrop__claim-section {
+  text-align: center;
+}
+
+.claim__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f4f4f4;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.claim__title img {
+  margin-right: 0.5rem;
+}
+
+#claimBtn {
+  background: #2dce89;
+  box-shadow: rgba(45, 206, 137, 0.5) 0px 0px 5px, rgba(0, 0, 0, 0.04) 0px 4px 8px;
+}
+
+#claimBtn:hover {
+  background: #46d25c;
+}
+
+.badge {
+  background-color: #2dce89 !important;
+}
+
+/* Стили для плавающей кнопки Claim Airdrop */
+.floating-btn {
+  position: absolute; /* Привязываем к .image-wrapper */
+  z-index: 999;
+  background: rgba(45, 206, 137, 0.2);
+  color: #f4f4f4;
+  border: 2px solid #2dce89;
+  border-radius: 50px;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.floating-btn:hover {
+  background: #2dce89;
+  transform: scale(1.1);
+}
+
+/* Пульсирующая тень */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(45, 206, 137, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(45, 206, 137, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(45, 206, 137, 0.5);
+  }
+}
